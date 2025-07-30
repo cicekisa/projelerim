@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İsa Çiçek - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root { /*secici*/
+            --primary-color: #4e3629; /*sayfanın ana rengi*/
+            --secondary-color: #f1c40f; /*ikincil renk olarak*/
+            --text-color: #333;  /*metin renkleri*/
+            --light-bg: #fff3e0;  /*acık  arka plan*/
+            --dark-bg: #121212; 
+            --dark-text: #E0E0E0;
+            --link-color: #007BFF;  /*linkler icin tanımlanan renk*/
+            --link-hover: #0056b3;  /*linklerin uzerine gelindginde renk degisimi*/
+        }
+
+        * {  /*  * tum htmlde gecerli genel secicidir */
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*farklı farklı yazı tipleri */
+            line-height: 1.6; /*satırlar arasındaki bosluk*/
+            background-color: white;
+            color: var(--text-color); /*tema degistiginde rengi gunceller*/
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            background-color: var(--dark-bg); /*arka plandaki rengini --dark-bg ile ayarlanır*/
+            color: var(--dark-text);
+        }
+
+        .dark-mode .divOzellik2,
+        .dark-mode .project-card {
+            background-color: #1e1e1e;
+            color: #ecf0f1;          /*red,green,blue alfa(sefaflık)*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }   /*yatay,dikey kayma ,gelgenin bulanıklıgı*/
+
+        .dark-mode h2,
+        .dark-mode .divOzellik2 h2,
+        .dark-mode .project-section h2 {
+            color: var(--secondary-color); /*karanlık modda yazoların rengi*/
+        }
+
+        .dark-mode a {
+            color: #bb86fc;
+        }
+
+        .dark-mode a:hover {
+            color: #3700b3;
+        }
+
+        .dark-mode button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .dark-mode .site-footer {
+            background-color: #000;
+            color: #f39c12;
+        }
+
+        .dark-mode .nav-list li {
+            background-color: #222;
+        }
+
+        .dark-mode .nav-list li a {
+            color: #1E90FF;
+        }
+
+        .divOzellik {
+            flex: 1 1 300px;/*ogenin genislemesi,daralması,varsayılan Genislik*/
+            padding: 15px; /*ic bosluk   oge ile icerik arasındaki mesafe*/
+            margin: 10px; /*dıs bosluk   oge ile diger ogeler arasındaki bosluk*/
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }/*yatay,dikey kayma, golgelendirme*/
+
+        .divOzellik label {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .divOzellik div>div {
+            height: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .divOzellik div:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .divOzellik2 {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin: 15px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .divOzellik2:hover {
+            transform: scale(1.02); /*fare ile ogenin uzerine gidince daha buyuk gorunme*/
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 5px 0 15px;
+            overflow: hidden; /*tasan kısımları onleme sınır icinde tutma*/
+        }
+
+        .html {
+            background-color: #4CAF50;
+            height: 20px;
+            width: 80%;
+        }
+
+        .css {
+            background-color: #2196F3;
+            height: 20px;
+            width: 70%;
+        }
+
+        .js {
+            background-color: #f39c12;
+            height: 20px;
+            width: 50%;
+        }
+        .c {
+            background-color: #ff0000;
+            height: 20px;
+            width: 70%;
+        }
+
+        .dark-mode .html {
+            background-color: #27ae60;
+        }
+
+        .dark-mode .css {
+            background-color: #2980b9;
+        }
+
+        .dark-mode .js {
+            background-color: #d35400;
+        }
+         .dark-mode #tarihSaat {
+            color: var(--secondary-color) !important; 
+        }
+
+        #customers {
+            width: 100%;
+            border-collapse: collapse; /*kenarlar arasındaki boslukları kaldırır*/
+            margin: 20px auto;
+            text-align: center;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            overflow: hidden; /*tablonun tasan kısmı goruntusunun engellenmesi*/
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #customers th,
+        #customers td {
+            padding: 12px;
+            border: 1px solid #ddd; /*1 px kalınlıgında cerceve*/
+        }
+
+        #customers th {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 16px;
+        }
+
+        #customers tr:nth-child(even) { /*tabloda cift numaralı satırlara uygula*/
+            background-color: #fbe9e7;
+        }
+
+        #customers tr:nth-child(odd) { /*tabloda tek numaralı satırlara uygula*/
+            background-color: white;
+        }
+
+        #customers tr:hover {
+            background-color: #FF4500;
+            color: white;
+        }
+
+        .timeline .event {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative; /*normal olması gereken yeri bos bırakması*/
+        }
+
+        .timeline .event::before {
+            content: "•";
+            position: absolute; /*eventten konumu bulur ve yerlestirir*/
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .hobiler-ve-yetenekler-container {
+            display: flex; /*yatay ve dikeyde hizalama yapar*/
+            flex-wrap: wrap; /*satır uzunlugu fazla ise assagı kaydırma*/
+            justify-content: space-around; /*ogeler arasında esit bosluk*/
+            gap: 20px; /*flexBox aralarında bosluk ayarlar*/
+            padding: 15px;
+        }
+
+        .project-section {
+            padding: 20px;
+            margin: 30px auto; /*outo old icin alt ve ustten bosluk*/
+            background-color: #f2e2c4;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--text-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none; /*butonun kenarlıgını kaldırır*/
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer; /*tıklanınca fare ok isareti yerine el isaretine gececek*/
+            transition: all 0.3s ease; 
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            opacity: 0.9; /*fare uzerine geldiginde daha sefaf hale gelir*/
+            transform: translateY(-2px); /*fare gelince buton biraz one ve yukarı cıkar*/ 
+        }
+
+        .theme-toggle { /*tema degistir*/
+            position: fixed;
+            top: 20px; /*ust kısma 20px uzakta*/
+            right: 20px;
+            z-index: 100; /*diger ogelerin uzerinde olmasını saglar*/
+        }
+
+        .marquee { /*hareketli metin*/
+            background-color: black;
+            color: aqua;
+            padding: 10px 0;
+            margin: 15px 0;
+            overflow: hidden; /*tasan kısmı gizle*/
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover; /*fotoyu kutuyu tam alacak sekilde ayarlar*/
+            border: 3px solid var(--secondary-color); /*keskin cerceve*/
+            margin: 15px auto; /*resmin etrafında 15px bosluk yatay ortalar*/
+            display: block; /*yeni satır*/
+        }
+
+        .social-icons {
+            display: flex; /*yatayda duzgunce hizalama*/
+            justify-content: center;
+            gap: 15px; /*icon arası bosluk*/
+            margin: 20px 0;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /*logoları %10 buyutur fare ustundeyken*/
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: var(--secondary-color);
+            margin-top: 40px;
+        }
+
+        .back-to-top {
+            background-color: darkgreen;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none; /*link altındaki cizgiyi kaldır*/
+            margin-left: 10px;
+            display: inline-block; /*hem blok hem de satır içi*/
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) { /*verilen px den kuuckse diye burası yazıldı*/
+            .hobiler-ve-yetenekler-container {
+                flex-direction: column; /*yukarudan assa duzen dikey*/
+            }
+            
+            .divOzellik2 {
+                width: 90%; /*mobile gecince sıkıntı olmasın diye %100 degil*/
+            }
+            
+            #customers {
+                font-size: 14px;
+            }
+            
+            #customers th,
+            #customers td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Theme Toggle Button      tema geçişi-->
+    <button class="theme-toggle" onclick="temaDegistir()">
+        <i class="fas fa-moon"></i> Karanlık Tema
+    </button>
+
+    <header style="text-align: center; padding: 30px 0;">
+        <img src="resimler/isaProfil.jpg" alt="Profile Photo" class="profile-img">
+        <h1 style="color: var(--primary-color); margin: 10px 0;">İSA ÇİÇEK</h1>
+        <p style="color: chocolate; font-size: 1.1em;">Yazılım Mühendisliği Öğrencisi</p>
+    <!-- Saat ve tarih icin ekleenen div-->
+     <div id="tarihSaat" style="font-size: 1.2em; margin-top: 10px; color: var(--
+     primary-color);"></div>
+    </header>
+
+
+
+    <div class="marquee"> <!--Kayan yazı-->
+        <marquee behavior="scroll" direction="left"> <!--yazı kayarak gecsin-->
+            <i>Yazılım Tutkusu Bir Yolculuktur. Bu Benim Hikayem :)</i>
+        </marquee>
+    </div>
+
+
+
+    <main style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <section class="about" style="margin: 30px 0;">
+            <h2><i class="fas fa-user"></i> Hakkımda</h2>
+            <p style="color: #2200ff; line-height: 1.8;">
+               C, HTML, CSS ve JavaScript öğreniyorum. Bu sayfa proje ödevim. 
+                2005 yılında Batman/Hasankeyf'te doğdum. Şu anda Malatya İnönü Üniversitesi'nde 
+                Yazılım Mühendisliği okuyorum. Teknolojiye ve yazılıma büyük bir ilgim var ve 
+                kendimi bu alanda sürekli geliştiriyorum. Ayrıca Malatya Teknokent'te de ise basladım şu anda aktif olarak çalısmaktayım 
+            </p>
+            
+            <div class="timeline" style="margin: 20px 0;">
+                <h3 style="margin-bottom: 15px;"><i class="fas fa-history"></i> Zaman Çizelgem</h3>
+                <div class="event"><strong>2005</strong> - Doğum (Hasankeyf)</div>
+                <div class="event"><strong>2020</strong> - İlk Kez Proje Yaptım Ve Van Bölge Finalisti Türkiye'de 8. Oldum</div>
+                <div class="event"><strong>2024</strong> - İnönü Üniversitesi Yazılım Müh. Başlangıcı</div>
+                <div class="event"><strong>2024</strong> - Yazılım Öğrenme Yolculuğunda Adımlar Hızlandı</div>
+                <div class="event"><strong>2025</strong> - JavaScript Öğrenme Yolculuğu Başladı</div>
+            </div> <!-- zaman Cizelgem -->
+        </section>
+
+        <section style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin: 30px 0;">
+            <h2 style="text-align: center; color: var(--primary-color);"> Kişisel Bilgiler</h2>
+            <p style="text-align: center; margin: 15px 0;">
+                <strong>Doğum Yeri:</strong> Hasankeyf/Batman<br>
+                <strong>Doğum Tarihi:</strong> 2005<br>
+                <strong>Eğitim:</strong> İnönü Üniversitesi - Yazılım Mühendisliği<br>
+                <strong>Telefon:</strong> 0552 170 7235<br>
+                <strong>Email:</strong>
+                <a href="mailto:cicekisa105@gmail.com ">cicekisa105@gmail.com</a> 
+            </p>
+        </section>
+
+        <div class="hobiler-ve-yetenekler-container">
+            <div class="divOzellik">
+                <h2><i class="fas fa-heart"></i> Hobilerim</h2>
+                <ul style="list-style-type: none;"> <!--(.)isaretlerini gizleyip ikon yerlesitildi -->
+                    <li><i class="fas fa-tennis-ball"></i> Kort Tenis Oynamak</li>
+                    <li><i class="fas fa-volleyball-ball"></i> Voleybol</li>
+                    <li><i class="fas fa-film"></i> Film İzlemek</li>
+                    <li><i class="fas fa-swimming-pool"></i> Yüzmek</li>
+                    <li><i class="fas fa-plane"></i> Seyahat Etmek</li>
+                    <li><i class="fas fa-hiking"></i> Doğa Yürüyüşleri</li>
+                    <li><i class="fas fa-dumbbell"></i> Spor Yapmak</li>
+                </ul>
+                <button id="sporButon" onclick="filtreleHobiler()">
+                    <i class="fas fa-filter"></i> Spor Hobilerini Göster
+                </button>
+            </div>
+
+            <div class="divOzellik">
+                <h2><i class="fas fa-star"></i> Yeteneklerim</h2>
+                <label>HTML %80</label> <!--yuzdelil dilim-->
+                <div class="progress-bar">
+                    <div class="html"></div>
+                </div>
+
+                <label>CSS %70</label>
+                <div class="progress-bar">
+                    <div class="css"></div>
+                </div>
+
+                <label>JavaScript %50</label>
+                <div class="progress-bar">
+                    <div class="js"></div>
+                </div>
+
+                <label>C Programlama %75</label>
+                <div class="progress-bar">
+                    <div class="c"></div>
+                </div>
+            </div>
+
+        <section style="margin: 40px 0;">
+            <h2 style="text-align: center; margin-bottom: 20px;"><i class="fas fa-calendar-alt"></i> Haftalık Programım</h2>
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th colspan="7">Haftalık Programım</th>
+                    </tr>
+                    <tr>
+                        <th>Pazartesi</th>
+                        <th>Salı</th>
+                        <th>Çarşamba</th>
+                        <th>Perşembe</th>
+                        <th>Cuma</th>
+                        <th>Cumartesi</th>
+                        <th>Pazar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spor</td>
+                        <td>Matematik</td>
+                        <td>İşte Çalışma</td>
+                        <td>Ayrık Yapılar</td>
+                        <td>Lineer Cebir</td>
+                        <td>Programlama (Linked List)</td>
+                        <td>Programlama (JavaScript)</td>
+                    </tr>
+                    <tr>
+                        <td>Programlama Dersine Çalış</td>
+                        <td>Öz Bakım</td>
+                        <td>İşte Çalışma</td>
+                        <td>Gece Kitap Oku</td>
+                        <td>Yüzme Zamanı</td>
+                        <td>Web Programlama</td>
+                        <td>Spor</td>
+                    </tr>
+                    <tr>
+                        <td>Görev ve Sorumluluklar</td>
+                        <td>Tenis Zamanı</td>
+                        <td>İşte Çalışma</td>
+                        <td>Sevdiklerinle Vakit Geçir</td>
+                        <td>Gece Kitap Oku</td>
+                        <td>Java Becend Çalış</td>
+                        <td>React Çalış</td>
+                    </tr>
+                    <tr>
+                        <td>Dışarı Çık</td>
+                        <td>Kitap Oku</td>
+                        <td>İşte Çalışma</td>
+                        <td>Sevdiklerinle Vakit Geçir</td>
+                        <td>Yarınki JavaScript Konuya Göz At</td>
+                        <td>Java Becend Çalış</td>
+                        <td>React Çalış</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+         <!-- flex = tek satırda kalmak, wrap = satıra sıgmayan alta gonder, -->
+        <div style="display: flex;
+         flex-wrap: wrap; 
+         justify-content: space-around; 
+         margin: 30px 0;">
+            <div class="divOzellik2"> <!--icerikleri yatayda hizala, ekran daraldıgında alta gec, kutular arası esit bosluk,-->
+                <h2><i class="fas fa-map-marked-alt"></i> Gezdiğim Yerler</h2>
+                <hr>
+                <ul style="columns: 2; list-style-type: none;">
+                    <!-- 2 sütun halinde listele, (.)ları kaldır-->
+                    <li><i class="fas fa-check-circle"></i> Antalya</li>
+                    <li><i class="fas fa-check-circle"></i> Mersin</li>
+                    <li><i class="fas fa-check-circle"></i> Adana</li>
+                    <li><i class="fas fa-check-circle"></i> Diyarbakır</li>
+                    <li><i class="fas fa-check-circle"></i> Şanlıurfa</li>
+                    <li><i class="fas fa-check-circle"></i> Şırnak</li>
+                    <li><i class="fas fa-check-circle"></i> Batman/Hasankeyf</li>
+                    <li><i class="fas fa-check-circle"></i> Sinop</li>
+                    <li><i class="fas fa-check-circle"></i> Samsun</li>
+                    <li><i class="fas fa-check-circle"></i> Ankara</li>
+                </ul>
+            </div>
+
+            <div class="divOzellik2">
+                <h2><i class="fas fa-globe-americas"></i> Gezmek İstediğim Yerler</h2>
+                <hr>
+                <ul style="list-style-type: none;">
+                    <li><i class="fas fa-torii-gate"></i> İzmir</li>
+                    <li><i class="fas fa-landmark"></i> Çanakkale</li>
+                    <li><i class="fas fa-bridge"></i> İstanbul</li>
+                    <li><i class="fas fa-mountain"></i> Kristal Mağara, Skaftafell, İzlanda</li>
+                    <li><i class="fas fa-tree"></i> Wisteria Tüneli, Kitakyushu, Japonya</li>
+                    <li><i class="fas fa-spa"></i> Lavanta Tarlaları, Provence, Fransa</li>
+                    <li><i class="fas fa-lake"></i> Plitvice Gölü, Hırvatistan</li>
+                    <li><i class="fas fa-vihara"></i> Ki Manastırı, Himalayalar</li>
+                    <li><i class="fas fa-tower-eiffel"></i> Eyfel Kulesi, Paris</li>
+                    <li><i class="fas fa-water"></i> Blue Lagoon, İzlanda</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin: 20px auto; width: 90%; max-width: 500px;">
+            <label>Türkiye'de Gezmek İstediğim Yerler %30</label>
+            <div style="background-color: #e0e0e0; border-radius: 5px; height: 20px;">
+                <div style="width: 30%; height: 100%; background-color: #4CAF50; border-radius: 5px;"></div>
+            </div>
+        </div>
+
+        <div class="divOzellik2" style="margin: 30px auto;">
+            <h2><i class="fas fa-lightbulb"></i> Eğlenceli Bilgiler</h2>
+            <hr>
+            <ul style="list-style-type: none;">
+                <li><i class="fas fa-arrow-right"></i> Hasankeyf'e gittiğimde Hasankeyf Kalesi'ni ve daha nice tarihi yerleri gördüm, çok güzel bir deneyimdi.</li>
+                <li><i class="fas fa-arrow-right"></i> Sinop'ta yaylaya çıkmıştım, sabaha karşı yaylada doğanın sesiyle çay içmeyi tavsiye ederim.</li>
+                <li><i class="fas fa-arrow-right"></i> Batman'da doğdum, ama hep İzlanda'ya gidip Kuzey Işıklarını yakından görmek istemişimdir.</li>
+                <li><i class="fas fa-arrow-right"></i> Arkadaşım anlatmıştı Tokyo'da Sakura ağaçlarının altında kahve içmek çok güzel diye, ben de gitmek isterim.</li>
+                <li><i class="fas fa-arrow-right"></i> Eyfel Kulesi'ne karşı oturup birkaç saatliğine muhteşem demir yığınını görmek isterim.</li>
+            </ul>
+        </div>
+
+        <div class="project-section">
+            <h2><i class="fas fa-laptop-code"></i> Projelerim</h2>
+            <div class="project-card">
+                <h3>Basit Hesap Makinesi</h3>
+                <p>JavaScript ile Geliştirdiğim ilk mini projemdir.</p>
+            </div>
+            <div class="project-card">
+                <h3>Dijital Saat</h3>
+                <p>HTML ile yapısı, CSS ile tasarımı, JS ile sürekli Güncellenen Saat</p>
+            </div>
+            <div class="project-card">
+                <h3>TO-DO-LİST (Yapılacaklar Listesi)</h3>
+                <p>Görev ekleme, silme, tamamlama özellikli</p>
+            </div>
+            <div class="project-card">
+                <h3>Arka Plan Rengi Değiştirici</h3>
+                <p>Butona tıklayınca sayfanın arka plan rengini değiştir</p>
+            </div>
+            <div class="project-card">
+                <h3>Basit Web Sayfası - Hakkımda</h3>
+                <p>HTML ve CSS ile kendini tanıtan bir kişisel sayfa</p>
+            </div>
+            <div class="project-card">
+                <h3>Tahmin Et Oyunu</h3>
+                <p>Rastgele bir sayı tutar, kullanıcı tahmin eder. JS ile geri bildirim verir</p>
+            </div>
+        </div>
+
+        <div class="divOzellik2" style="text-align: center; margin: 30px auto;">
+            <p>LinkedIn sayfamı hızlıca tarayarak bulabilirsiniz</p>
+            <img src="resimler/linkedlin.png" alt="QR Kod" width="200" height="200" style="margin: 15px auto;">
+        </div>
+    </main>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank"><img src="resimler/indir.jpg" alt="Instagram"></a>
+        <a href="https://tr.linkedin.com/" target="_blank"><img src="resimler/linkedinLogo.jpg" alt="LinkedIn"></a>
+        <a href="https://x.com/?&" target="_blank"><img src="resimler/xİmages.jpg" alt="X (Twitter)"></a>
+        <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i> Yukarı Çık</a>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2025 İsa ÇİÇEK | Tüm Hakları Saklıdır
+    </footer>
+
+    <script>
+
+            // Saat ve tarih fonksiyonu
+    function saatVeTarihGoster() {
+        const now = new Date();  // saat objesi 
+        const tarihOptions = { 
+            year: 'numeric', 
+            month: '2-digit',  // 2 hane
+            day: '2-digit',
+         };
+         const saatOptions = {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false // 24 saat formatı için
+         };  
+         // Türkçe format için 
+         const tarih = now.toLocaleDateString('tr-TR',tarihOptions);
+         const saat = now.toLocaleTimeString('tr-TR',saatOptions);
+
+         document.getElementById('tarihSaat').innerHTML = `${tarih} ${saat}` ;
+        // Her saniye güncelle
+        setTimeout(saatVeTarihGoster, 1000); // 1 sn 1000 milisaniyedir
+    }
+     // Sayfa yüklendiğinde hoşgeldin mesajı
+        window.addEventListener('DOMContentLoaded', (event) => {
+            alert("Ben İsa ÇİÇEK. Sayfama Hoş geldiniz!");
+            saatVeTarihGoster(); 
+        });
+
+        
+
+
+
+        // Hobileri filtreleme fonksiyonu
+        let aktifMi = false;
+        function filtreleHobiler() { // butonu acma medthodu
+            const hobiler = document.querySelectorAll('.divOzellik ul li');
+            const buton = document.getElementById('sporButon');
+            
+            if(!aktifMi) {
+                hobiler.forEach(function(hobi) {
+                    const yazi = hobi.textContent.toLowerCase();
+                    if(yazi.includes('spor') || yazi.includes('tenis') || yazi.includes('yüzmek') || yazi.includes('voleybol')) {
+                        hobi.style.display = 'list-item';
+                    } else {
+                        hobi.style.display = 'none';
+                    }
+                });
+                buton.innerHTML = "<i class='fas fa-list'></i> Tüm Hobileri Göster";
+                aktifMi = true;
+
+            } else { // filtre acıksa,tekrar tum hobileri goster filtre kapalı
+                hobiler.forEach(function(hobi) { // her birini listele
+                    hobi.style.display = 'list-item';
+                }); // butonun simgesini ve metnini 
+                
+                buton.innerHTML = "<i class='fas fa-filter'></i> Spor Hobilerini Göster";
+                aktifMi = false;
+            }
+        }
+
+        // Tema değiştirme fonksiyonu
+        function temaDegistir() {
+            const body = document.body; // kullanıcın old temada kalma
+            body.classList.toggle('dark-mode'); // her tıkladıgında temayı degistirir
+            const button = document.querySelector('.theme-toggle');
+            
+            if(body.classList.contains('dark-mode')) {
+                button.innerHTML = "<i class='fas fa-sun'></i> Aydınlık Tema";
+                localStorage.setItem('theme', 'dark'); // tarayıcıyı kalıcı olarak saklar
+            } else {   // oraya foculanıyor    theme aktarıldıgı icin  
+                button.innerHTML = "<i class='fas fa-moon'></i> Karanlık Tema";
+                localStorage.setItem('theme', 'light'); 
+            }
+        }
+
+        // Sayfa yüklendiğinde tema kontrolü
+        // DOMContentLoaded taracıda islendiginda fonksiyon calısmaya baslar
+        document.addEventListener('DOMContentLoaded', function() { // DOM = document object model
+            if(localStorage.getItem('theme') === 'dark') { // theme == dark ise karanlık tema onceden secilmis
+                document.body.classList.add('dark-mode');
+                document.querySelector('.theme-toggle').innerHTML = "<i class='fas fa-sun'></i> Aydınlık Tema";
+            } // karanlık temada oldugu icin aydınlık temaya gecisi hazırlar
+        });
+    </script>
+</body>
+</html> <!-- DİNLEDİĞİNİZ İÇİN TEŞEKKÜR EDERİM  :) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- gecisleri nasıl yaptın 
+ bastıgında renkler nasıl degisiyor
+ CSS VE JS dosyaları nasıl cagrılır
+ mause ustune getirilince renk degisimi nasıl kullanılır
+ -->

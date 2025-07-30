@@ -1,0 +1,2 @@
+ali 65 80 74.00 cti Gecti
+isa 75 75 75.00 cti Gecti

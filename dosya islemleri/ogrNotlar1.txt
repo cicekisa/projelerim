@@ -1,0 +1,7 @@
+isim	vizeNotu	FinalNotu	ort
+------|--------|----------|-------
+  isa	   41	    85	     67.40
+ilayda	   72	    38	     51.60
+cemile	   80	    69	     73.40
+bilal	   65	    68	     66.80
+ arda	   96	    22	     51.60

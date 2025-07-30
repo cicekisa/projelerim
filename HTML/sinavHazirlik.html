@@ -1,0 +1,192 @@
+<!--
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Not Kutusu</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      background-color: #eef2f3;
+    }
+
+    .kutu {
+      background-color: #f0f8ff;
+      border: 2px dotted #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+    }
+
+    #girdi {
+      width: 70%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #ekleBtn {
+      background-color: #87ceeb;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      font-family: Verdana;
+      cursor: pointer;
+    }
+
+    #notlar {
+      margin-top: 15px;
+    }
+
+    .not {
+      background-color: #fff;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border-left: 4px solid #87ceeb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kutu">
+    <input type="text" id="girdi" placeholder="Not girin">
+    <button id="ekleBtn">Ekle</button>
+     <br>
+     <hr style="margin-top: 25px; margin-bottom: 25px;">
+    <div id="notlar"></div>
+  </div>
+  
+
+  <script>
+    const ekleBtn = document.getElementById("ekleBtn");
+    const girdi = document.getElementById("girdi");
+    const notlar = document.getElementById("notlar");
+
+    ekleBtn.addEventListener("click", function() {
+      const yazi = girdi.value.trim();
+      if (yazi !== "") {
+        const yeniNot = document.createElement("div");
+        yeniNot.className = "not";
+        yeniNot.textContent = yazi;
+        notlar.appendChild(yeniNot);
+        girdi.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Not Kutusu</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      background-color: #eef2f3;
+    }
+
+    .kutu {
+      background-color: #f0f8ff;
+      border: 2px dotted #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+    }
+
+    #girdi {
+      width: 70%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #ekleBtn {
+      background-color: #87ceeb;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      font-family: fantasy;
+      cursor: pointer;
+    }
+
+    #notlar {
+      margin-top: 15px;
+    }
+
+    .not {
+      background-color: #fff;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border-left: 4px solid #87ceeb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .silBtn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kutu">
+    <input type="text" id="girdi" placeholder="Not girin">
+    <button id="ekleBtn">Ekle</button>
+    <br>
+    <hr style="margin-top: 25px; margin-bottom: 25px;">
+    <div id="notlar"></div>
+  </div>
+
+  <script>
+    const ekleBtn = document.getElementById("ekleBtn");
+    const girdi = document.getElementById("girdi");
+    const notlar = document.getElementById("notlar");
+
+    ekleBtn.addEventListener("click", function() {
+      const yazi = girdi.value.trim();
+      if (yazi !== "") {
+        const yeniNot = document.createElement("div");
+        yeniNot.className = "not";
+
+        const notMetni = document.createElement("span");
+        notMetni.textContent = yazi;
+
+        const silBtn = document.createElement("button");
+        silBtn.className = "silBtn";
+        silBtn.textContent = "Sil";
+        silBtn.addEventListener("click", function() {
+          notlar.removeChild(yeniNot);
+        });
+
+        yeniNot.appendChild(notMetni);
+        
+        yeniNot.appendChild(silBtn);
+        notlar.appendChild(yeniNot);
+
+        girdi.value = "";
+      }
+    });
+  </script>
+
+</body>
+</html>

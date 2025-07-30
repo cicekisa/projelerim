@@ -1,0 +1,44 @@
+
+* body{
+   /* Yazı Tipi	Açıklama
+    'Segoe UI'	Modern ve sade bir font. Genellikle Windows sistemlerde varsayılan olarak vardır.
+    Tahoma	Düzgün ve okunaklı bir yazı tipi. Windows kullanıcılarında genellikle yüklüdür.
+    Geneva	Mac bilgisayarlarda yüklü olan benzer bir yazı tipi.
+    Verdana	Geniş ve rahat okunabilen bir yazı tipi. Hemen her bilgisayarda vardır.
+    sans-serif	Eğer listedeki hiçbir font yoksa, düz (kuyruksuz) bir yazı tipi kullan anlamına gelir. Bu, bir yedek kategoridir.*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    padding: 30px;
+ }
+    h2{
+      color: burlywood;
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .yerler-container{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    .divOzellik{
+        background-color: #fff8dc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 300px;
+    }
+    ul{
+        list-style-type: circle;
+        padding-left: 20px;
+    }
+    li{
+        padding: 5px 0;
+        font-size: 16px;
+        color:#333;
+    }
+    hr{
+        margin-top: 30px;
+    }
+    

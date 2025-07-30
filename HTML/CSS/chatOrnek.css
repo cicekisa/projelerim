@@ -1,0 +1,153 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header ve Anasayfa */
+header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.hero-section {
+    margin-top: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #ff6b6b;
+    padding: 12px 30px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-btn:hover {
+    background-color: #ff3b3b;
+}
+
+/* Hakkımda Bölümü */
+#about {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Becerilerim Bölümü */
+#skills {
+    background-color: #f3f3f3;
+    padding: 60px 0;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.skill {
+    text-align: center;
+}
+
+.skill img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.skill p {
+    font-weight: 600;
+}
+
+/* Projelerim Bölümü */
+#projects {
+    padding: 60px 0;
+}
+
+#projects ul {
+    list-style: none;
+    text-align: center;
+}
+
+#projects ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#projects ul li a {
+    text-decoration: none;
+    color: #2575fc;
+}
+
+#projects ul li a:hover {
+    text-decoration: underline;
+}
+
+/* İletişim Bölümü */
+#contact {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #2575fc;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

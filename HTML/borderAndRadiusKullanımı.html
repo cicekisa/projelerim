@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .kutu{
+            background-color: blanchedalmond;
+            width: 250px;
+            height: 300px;
+     /*borderin kalınlıgı tipi   rengi   solid cizgilerin duz gitmesi anlmına geliyor*/
+           border: 7px    ridge lightblue;
+        }
+        .kutu2{
+            background-color: aqua;
+            width: 150px;
+            height: 150px;
+        }
+        .kutu3{
+            background-color: aqua;
+            border-radius: 50%; /* border radius sekillerin kenarlarındaki sivriligi kırmak ovallastırmak*/
+            width: 50%;   /*50% seklinde yazılınca ekranın %50'si seklinde 50px seklinde yapılınsa sabit bir alan veriliyor ekranı buyutup kucultunce de degismiyor */
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body>
+    <!--
+    dotted  = kenarlarin nokta nokta sekilde kapsaması 
+    dashed  =    //      kısa kısa cizgiler seklinde
+    solid   =    //      duz tek cizgi kesintisiz
+    double  =    //      //  cift  //      //
+    groove  =    //      //   //   //       //   kesintisiz iki cizgi arasına istenilen renkte cizgi cekmek
+    ridge   =   
+    inset   =  3 boyutlu gibi kalınlık veriyor (cerceve gibi dusun)
+    -->    
+   <div class="kutu"></div> <br>
+   <div class="kutu2"></div><br>
+   <div class="kutu3"></div><br>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+isim:isa
+soyisim:asi
+yas:25
+okul:ITU
+okulNo:12

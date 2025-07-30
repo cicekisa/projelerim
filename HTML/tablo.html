@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PABLO EMİLİO ESCOBAR</title>
+</head>
+<body>
+    <!-- TABLO YAPIMINDAKİ KULLANILACAK TEMEL ELEMANLAR
+    9- ol(ordinary list == siralı listeler => mesela basinda 1. 2. gibi gosteriyor , ul(unordinary list == sırasız listeler => mesela (.) basında nokta seklinde gosteriyor) )
+    10- table:tablo  tr => table row => tablo satırı   td => tablo data =>tablonun icerise girecegimi veriler / th=> tablo header => tablonunu baslıgı 
+       rowspan => satırları birlestirmek icin kullanılır
+       colspan => sütunları birlestirmek icin kullanılır
+    11- inline(belli bir kısmında yazar sonra ekleme yapılabilir)=> [span olarak kullanılabilir] ve block(satır boyunca kaplar yanına baska yazı gelmez) mantıgı
+       inline ve blok arasındaki fark inline sonradan da ekleme yapılabiliyorken  digerinde yapılamıyor   -->
+         
+    <!--        <th>isim</th>
+            <th>Soyisim</th>
+            <th>Yaş</th> 
+            </tr> 
+            
+            colspan sütunlar
+            rowspan satirlar
+            -->                           <!--rowspna ise o da aynı islemi satirlarda yapar--> 
+             <table border="1">
+          <tr>
+            <th colspan="3"> product</th> <!--colspan="3" 3 tane sütunu birlestirmek icin kullanılır sütunlar arasındaki cizgileri kaldırır-->
+            </tr>    <!-- kalın olması icin th ile yazıldı product-->
+          <tr>
+            <th>No</th>
+            <th>P.Name</th>
+            <th>p.Count</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Pen</td>
+            <td rowspan="3">50</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Book</td>
+           
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Dust</td>
+        </tr>
+     </table>     
+</body>
+</html>

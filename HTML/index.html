@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/chatOrnek.css">
+
+    <title>CV HAZIRLAMA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/gezilecek.css">
+    <style>
+        .divOzellik {
+            flex: 1 1 300px;/*Buyuyebilir,kucultulebilir,en az 300 px genislik*/
+           max-width: 100%; /* MAX genislik ayarlanabilir */
+           padding: 10px;
+           box-sizing: border-box;
+           margin-bottom: 10px;
+            
+            /* background-color:cadetblue;*/
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .divOzellik label {
+            font-weight: bold;
+            color: #333;
+        }
+        .divOzellik div > div{
+            height: 20px;
+            transition: background-color 0.3s ;
+        }
+        .divOzellik div:hover { 
+            background-color: #FFD700;
+        }
+        .divOzellik2{
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 13%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            color: black;
+            margin-top: 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+            .divOzellik2:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-list {
+            list-style: none;
+            width: 40%;
+            margin-top: 40px;
+            /* padding:0;*/
+        }
+
+        .nav-list li {
+            
+            background-color: #3F3F3F;
+            
+        }
+        a{ /*link stili icin*/
+            color: #007BFF;
+            text-decoration: none; /*Linklerin altını cızme*/
+        }
+        a:hover{
+            color: #0056b3;
+            text-decoration: underline; /* fare uzerine gelince linkin altını ciz*/
+        }
+        .dark-mode a {
+         color: #1abc9c;
+        }
+        .dark-mode a:hover{
+            color: #16a085;
+        }
+
+        .nav-list:hover {
+            background-color: rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+
+
+        table,th,td {
+            border-collapse: collapse;
+            background-color: bisque;
+            /*border: kalınlık kenarlık tipi  rengi*/
+            border: 2px solid burlywood;
+        }
+
+        #customers th {
+
+            background-color: #3e2723;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+        }
+        #customers{
+            width: 100%;
+            border-collapse:collapse ;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #fff3e0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #customers td{
+            padding: 12px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #fbe9e7;
+
+        }
+
+        #customers tr:nth-child(odd) {
+            background-color: white;
+
+        }
+
+        #customers tr:hover {
+            background-color: #FF4500;
+            color: white;
+        }
+
+        ul {
+            color: rgb(255, 0, 0);
+            padding: 0;
+            margin: 0;
+            list-style-position: inside;
+        }
+
+        i {
+            padding-right: 10px;
+        }
+        .timeline .event{
+            margin: 10px 0;
+            padding-left: 10px;
+            position: relative;
+        }
+        .timeline .event::before{
+            content: "•";
+            position: absolute;
+            left: -13px;
+            color: yellow;
+            font-size: 24px;
+            line-height: 1; 
+        }
+        .dark-mode{
+            background-color: #121212 !important;
+            color: #E0E0E0 !important;
+        }
+        .dark-mode .divOzellik2 {
+            background-color: #1e1e1e;
+            color: #ecf0f1;
+        }
+        .dark-mode button{
+            background-color: #FF4500;
+            color: #e0e0e0;
+        }
+        .dark-mode h2,.dark-mode p,.dark-mode li {
+            color: #FFD700;
+        }
+        .dark-mode .nav-list li{
+            background-color: #222;
+        }
+        .dark-mode .nav-list li a{
+            color: #1E90FF;
+        }
+        .divOzellik .html{ background-color: #4CAF50;} /*HTML*/
+        .divOzellik .css { background-color: #2196F3;} /*CSS*/
+        .divOzellik .js { background-color:  #f39c12;} /*JS*/
+
+        .dark-mode .html{ background-color: #27ae60;} /*HTML*/
+        .dark-mode .css { background-color: #2980b9;} /*CSS*/
+        .dark-mode .js { background-color:  #d35400;} /*JS*/
+
+        
+        .project-section{
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #f2e2c4;
+            border-radius: 10px;
+            width: 80%;
+            margin-left:auto;
+            margin-right:auto; 
+        }
+        .project-card {
+            background-color: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .project-card h3{
+            color: #4e3629;
+        }
+        .project-card p{
+            color: #333;
+        }
+       
+        .hobiler-ve-yetenekler-container{
+            display:flex; /*flex = esnek*/
+            justify-content: space-between;  /* icerideki boslukları goster */
+            flex-wrap: wrap; /* ekran kucuktme durumunda da yandakı div alt kısma gecmesini soyluyor*/
+            gap: 20px ; /*satır ve sutunlar arasındaki bosluklar veya  kutular arasında bosluk */
+            width: 100%;
+            margin-top: 20px;
+        }
+        .hobiler-ve-yetenekler-container ul li {
+            color:#000000;
+            transition: color 0.3s ease-in-out;
+        }
+        /* koyu modda hobiler ve yetenekler kısmı - tenk uyumu*/
+        .dark-mode .hobiler-ve-yetenekler-container ul li {
+            color: #000000; /*Beyaz metin rengi*/
+        }
+        /* Hobiler kısmı - Hover efekti */
+        .dark-mode .hobiler-ve-yetenekler-container ul li:hover{
+         color: #1abc9c; 
+        } 
+        .dark-mode h2, .dark-mode p,.dark-mode li {
+            color: #f1c40f;
+        }
+        h2{ /* Baslık kısımları*/ 
+            color: #2c3e50;
+        }
+        button{
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px; /*butonun ic kenar bosluklarını ayarlar*/
+            border-radius: 5px; /*butonun kenarlarını yuvarlatır*/
+           cursor: pointer; /* butonun ustune gelince mauseyi ok isaretinden el isaretine ceviriyor*/ 
+        }
+        .dark-mode button { /* koyu modda renk degistirme butonu*/
+            background-color:  #e74c3c;
+            color: #fff;
+        }
+
+        /*img{ bu css ozelligiyle resimlerin uzerine yazı yazdırabiliyoruz
+            position: absolute;
+            z-index: -1;
+            top: 0px;
+        }*/
+        body {
+            font-family: Arial, Helvetica, sans-serif; /*font ailesini belirler*/
+            margin: 0; /* sayfanın kenarlarından boslukları sırıfrlar */
+          padding: 0; /*    //      kenarları ile ic bosluk ayarlama */
+          background-color: #fff;
+          color: #333;
+        }
+        body.dark-mode a{
+            color: #bb86fc; /*linkin rengini degistirir karanlık tema*/
+        }
+        body.dark-mode button { 
+            background-color: #fefefe;
+        }
+        body.dark-mode button:hover {
+            background-color:  #3700b3; /*karanlık temada mause uzerine geldiginde renk degistir */
+        }
+        .site-footer{
+            text-align: center;
+             padding: 10px; 
+             background-color: #222; 
+             color: #f1c40f;
+             margin-top: 40px;
+        }
+        .dark-mode .site-footer {
+            background-color: #000000;
+            color: #f39c12;
+        }
+    </style>
+
+
+</head>
+
+<body id="top" >
+    <!--Tema Degistirme Butonu-->
+    <button onclick="temaDegistir()" style="margin: 10px; padding: 10px; background-color: #222; color: #fff; border: none; border-radius: 5px;">
+        Tema Degistir
+    </button>
+
+    <section class="about"> <!--icerik blokarını ayırmak icin      class about kısmı da CSS ozel stil verebiliriz-->
+        <h2> Hakkımda</h2>
+        <p style="color: #2200ff;">HTML, CSS ve JavaScript öğreniyorum. Bu sayfa proje ödevim :)</p>
+    </section>
+
+
+    <div class="timeline">
+        <div class="event"><strong>2005</strong> - Dogum(Hasankeyf)</div>
+        <div class="event"><strong>2020</strong> - İlk Kez Proje Yaptim Ve Van Bölge Finalisti Türkiyede 8. Oldum </div>
+        <div class="event"><strong>2024</strong> - İnönü Üniveristesi Yazılım Müh. Baslangıcı</div>
+       <div class="event"><strong>2024</strong>  - Yazılım Ögrenme Yolculugunda Adımlar Hızlandı </div> 
+        <div class="event"><strong>2025</strong> - JavaScript ögrenme yolculugu Basladı</div> 
+    </div>
+
+
+    <!--Kayan Yazılar bası-->
+    <center> <marquee behavior=" scroll " direction ="left" style="color:aqua; background-color: black;">
+        "<i>Yazılım Tutkusu Bir Yolculuktur. Bu Benim Hikayem :)</i>"
+    </marquee> <!-- kayan yazılar sonu-->
+    </center>
+    <center>
+        <a target="_blank"><img src="resimler/turkBayragi.jpg" alt="turk Bayrağı=" width=50%" height="50%" /></a>
+        <p style="color:chocolate; border: 3px solid black;">
+        <h2 style="color: burlywood; border: 3px solid black;"><i> İSA ÇİÇEK </i></h2>
+        I am İsa Çiçek, I was born in 2005 and I am from Batman.<br>
+        I am studying software engineering at Malatya İnönü University.
+        <br> I am doing research in my field.
+        To get in touch, you can reach us at the phone number below.
+        <br> phone number: 0552 170 7235
+        <br> gmail hesabım => cicekisa105@gmail.com <br>
+        </p>
+    </center><br>
+    
+    <button  id="sporButon" style="background-color: rgb(113, 62, 0); color:aqua; " onclick="filtreleHobiler()">
+        <i>Spor Hobilerini Göster</i>
+    </button>
+ <div class="hobiler-ve-yetenekler-container">
+    <!-- hobilerim kısmı-->
+    <div class="divOzellik">
+        <h2 style="color:burlywood;">Hobilerim</h2>
+        <ul>
+            <li>Kort Tenis Oynamak</li>
+            <li>Voleybol</li>
+            <li>Film İzlemek</li>
+            <li>Yüzmek</li>
+            <li>Seyahat Etmek</li>
+            <li>Doga Yürüyüşleri</li>
+            <li>Spor Yapmak</li>
+        </ul>
+        <hr> 
+    </div>
+    <!--      Yeteneklerim kısmı     -->
+     <div class="divOzellik">
+         <h2 style="color: burlywood;">Yeteneklerim</h2>
+     
+          <label style="color: black;"> HTML %80</label>
+          <div style="background-color: #ddd;">
+               <div class="html" style="width: 80%;"></div>
+          </div>
+
+          <label style="color: #000000;"> CSS %70</label>
+          <div style="background-color: #ddd;">
+               <div class="css" style="width: 70%;"></div>
+          </div>
+        
+         <label style="color: #000000;"> JavaScript %30</label>
+         <div style="background-color: #ddd;">
+             <div class="js"  style="width: 50%; "></div>
+         </div>
+     </div> 
+</div>   
+
+    <table  id="customers">
+        <thead>
+        <tr>
+            <th colspan="7"> Haftalık programım</th>
+            <!--colspan="3" 3 tane sütunu birlestirmek icin kullanılır sütunlar arasındaki cizgileri kaldırır-->
+        </tr> <!-- kalın olması icin th ile yazıldı product-->
+        <tr>
+            <th>pazartesi</th>
+            <th>salı</th>
+            <th>carsamba</th>
+            <th>persembe</th>
+            <th>cuma</th>
+            <th>cumartesi</th>
+            <th>pazar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>spor</td>
+            <td>matematik</td>
+            <td> işte calisma</td>
+            <td>ayrık yapılar</td>
+            <td>lineer cebir</td>
+            <td>programlama linked list</td>
+            <td>programlama JavaScript</td>
+        </tr>
+    </tbody>
+    <tbody>  
+        <tr>
+            <td>programlama dersine calis</td>
+            <td> Öz bakım </td>
+            <td> işte calisma</td>
+            <td>Gece kitap oku</td>
+            <td>yuzme zamanı</td>
+            <td> wep programlama</td>
+            <td>spor</td>
+        </tr>
+    </tbody> 
+    <tbody> 
+        <tr>
+            <td>gorev Ve sorumlulukları</td>
+            <td>tenis zamanı</td>
+            <td> işte calisma</td>
+            <td>sevdiklerinle vakit gecir</td>
+            <td> gece kitap oku</td>
+            <td> Java becend calis</td>
+            <td> react calis</td>
+        </tr>
+    </tbody> 
+    <tbody> 
+        <tr>
+            <td>disari çik</td>
+            <td>kitap oku</td>
+            <td> işte calisma</td>
+            <td>sevdiklerinle vakit gecir</td>
+            <td>yarınki JavaScript konu goz at</td>
+            <td> Java becend calis</td>
+            <td> react calis</td>
+        </tr>
+    </tbody> 
+     <!--   <ul class="nav-list">
+            <li><a href="#"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-newspaper"></i>News</a></li>
+            <li><a href="#"><i class="fa-solid fa-address-card"></i>contact</a></li>
+            <li><a href="#"><i class="fa-solid fa-address-card"></i>>about</a></li>
+        </ul>
+    </table>  -->
+    <!-- header = Sayfanın üst kısmı (başlık alanı). -->
+
+    <div class="yerler-container">
+        <div class="divOzellik2">
+            <h2 style="color:rgb(0, 0, 0);"><i class="fa-solid fa-location-dot"></i>Gezdigim Yerler </h2>
+            <hr><ul>
+                <li>Antalya</li>
+                <li>Mersin</li>
+                <li>Adana</li>
+                <li>Diyarbakır</li>
+                <li>ŞanlıUrfa</li>
+                <li>şırnak</li>
+                <li>Batman/Hasankeyf</li>
+                <li>Sinop</li>
+                <li>Samsun</li>
+                <li>Ankara</li>
+            </ul> <br>
+        </div>
+           <div class="divOzellik2">
+            <h2 style="color: rgb(0, 0, 0);"><i class="fa-solid fa-plane-departure"></i>Gezmek İstedigim Yerler</h2>
+            <hr><ul>
+                   <li><i class="fa-solid fa-tower-observation"></i>İzmir</li>
+                   <li><i class="fa-regular fa-landmark"></i>Çanakkale</li>
+                   <li><i class="fa-sharp fa-light fa-bridge"></i>İstanbul</li>
+                   <li><i class="fa-solid fa-mountain"></i>Kristal Mağara, Skaftafell, İzlanda</li>
+                   <li><i class="fa-solid fa-car-tunnel"></i>Wisteria Tüneli, Kitakyushu, Japonya</li>
+                   <li><i class="fa-solid fa-mountain-sun"></i>Lavanta Tarlaları, Provence, Fransa.</li>
+                   <li>Plitvice Gölü, Hırvatistan.</li>
+                   <li><i class="fa-solid fa-vihara"></i>Ki Manastırı, Himalayalar.</li>
+                   <li><i class="fa-duotone fa-regular fa-chart-pyramid"></i>Eyfel kulesi,Paris</li>
+                   <li><i class="fa-solid fa-water"></i>Blue Lagoon, İzlanda.</li>
+               </ul>
+           </div>
+        
+    </div>
+    <label>Türkiyede Gezmek İstedigim Yerler %30</label>
+<div style="background-color: rgb(76, 0, 255); width: 100%; height: 20px;">
+  <div style="width: 30%; height: 20px; background-color: rgb(0, 255, 0);"></div>
+</div>
+
+   <div class="divOzellik2">
+     <h2 style="color: burlywood;"><i class="fa-solid fa-lightbulb"></i>Eğlenceli bilgiler kısmı</h2>
+     <li>Hasankeyf'e gittigimde hasankeyf kalesini ve daha nice tarihi yerleri gördüm çok guzel bir deneyimdi</li>
+     <li>Sinop'ta yaylaya çıkmıstım sabaha karşı yayalada doğanın sesiyle çay içmeyi tavsiye ederim</li>
+     <li>Batma'da doğdum, ama hep izlandaya gidip Kuzey ışıklarını yakından gormek istemisimdir </li>
+     <li>arkadaşım anlatmıstı Tokyo'da Sakura ağaclarının altında kahve içmek çok güzel diye ben de gitmek isterim</li>
+     <li>Eyfel Kulesine karşı oturup birkac saatligine muhteşem demir yiğinini görmek isterim</li>
+     <li>Himalayalar çok yuksek o muhteşem doğa güzelliğinde trekking yapmak isterim</li>
+     <li>Wisteria Tünelini ilk videosunu gorduğumde etrafındaki şahane çiçekleri içerinde büyülendim </li>  
+     <li>Çanakkale hem tarihi güzelliği hem de doğa güzelligini barındıran çok güzel bir sehir</li>
+     <li>istanbul iki kıtanın bulusturdugu eşsiz Boğaz manzarası,kozmopolit yapısı ve tarihi güzelliği görülmeye deger bir şehir </li> 
+     <li>İzmir Ege lezzetleri,masmavi plajları ve tarihi yapısı gerçekten görülmeye değer bir şehir</li>
+    </div>
+
+
+
+
+
+   <div class="divOzellik2" style="text-align: center;">
+       <p> CV veya Linkedlin sayfamı hızlıca tarayarak bulabilirsiniz</p>
+       <h2 style="color: burlywood;"</h2>
+       <img src="resimler/linkedlin.png" alt="QR Kod" width="200" height="200">
+   </div>
+   <div class="project-section">
+    <h2 style="color: burlywood;"><i class="fa-solid fa-laptop-code"> Projelerim</i></h2>
+    <div class="project-card">
+        <h3>Basit Hesap Makinesi</h3>
+        <p>JavaScript ile Gelistirdigim ilk mini projemdir.</p><br>
+        <h3>Dijital Saat </h3>
+        <p>HTML ile yapısı,CSS ile tasarımı,JS ile sürekli Guncellenen Saat</p><br>
+        <h3>TO-DO-LİST(Yapilacaklar Listesi)</h3>
+        <p>Görev ekleme,silme,tamamlama özellikli</p><br>
+        <h3>Arka Plan Rengi Degistirici</h3>
+        <p>Butona tıklayınca sayfanın arka plan rengini degistir</p><br>
+        <h3>Basit Wep Sayfası-Hakkımda</h3>
+        <p>HTML ve CSS ile kendini tanıtan  bir kişisel sayfa</p><br>
+        <h3>Tahmin Et Oyunu</h3>
+        <p>Rastgele bir sayı tutar, kullanıcı tahmin eder.JS ile geri bildirim verir</p><br>
+    </div>
+   </div>
+
+
+
+
+    <br><br>
+    <script>
+        window.onload = function(){ // pencere icerisinde alert(UYARI kutusu icerisindekini)yaz allert = printf gibi dusunebilirsin
+            alert("Ben İsa ÇİÇEK.Sayfama Hoş geldin! Sayfama Göz attıgıniz icin Teşekkür ederim.");
+        }
+    </script>
+    <script>
+        let aktifMi = false;  // aktifMi degiskeni, hangi durumlardayız(spor filtreli mi,degil mi)bilgisini tutar
+        function filtreleHobiler() {
+            const hobiler = document.querySelectorAll('.divOzellik ul li'); // tum hobiler listesini seciyoruz
+            const buton = document.getElementById('sporButon'); // filtreleme butonu
+            
+            if(!aktifMi){ // eger su an filtreleme yapilmamıssa(aktifMi false ise )burası calısır
+                hobiler.forEach(function(hobi){
+                    const yazi = hobi.textContent.toLowerCase(); // her bir hobiyi kucuk harfe cevirerek kontrol ediyoruz
+                    if(yazi.includes('spor') || yazi.includes('tenis') || yazi.includes('yüzmek') || yazi.includes('voleybol')){
+                        hobi.style.display = 'list-item'; // eger gobi sporla ilgiliyse onu gosteriyoruz
+                    }
+                    else{
+                        hobi.style.display = 'none'; // diger hobileri gizliyoruz
+                    }
+                });
+                buton.style.background ="black"; // butonun arka plan rengini degistiriyoruz
+                buton.style.color = "yellow"; // buton metniin rengini degistiriyoruz
+                buton.innerHTML = "<i> Tüm Hobileri Göster </i>"; // buton metni degitiriliyor
+                aktifMi = true; // filtrleme aktif
+            }
+            else{ // eger filtreleme icin aktif degilse tum hobileri tekrar goster
+                hobiler.forEach(function(hobi){
+                    hobi.style.display = 'list-item';
+                });
+                buton.style.background ="rgb(113,62,0)"; // arka plan rengi eski haline getirmek icin
+                buton.style.color = "white"; //buton rengi eski haline getirme
+                buton.innerHTML = "<i> Spor Hobilerimi Göster </i>"; // metni eski haline getirme
+                aktifMi = false;
+            }
+
+        }
+        </script>
+        <script>
+            
+            function temaDegistir(){
+                const body = document.querySelector('body'); // body etiketini seciyoruz
+                body.classList.toggle('dark-mode'); // dark-mode sınıfını ekleyip cıkarma
+                const button = document.querySelector('button'); // tema degistirme butonunu degistirme
+
+                if(body.classList.contains('dark-mode')) { // eger dark-mode sınıfı varsa
+                    body.style.background = "#000000"; // arka planı siyah yapmak icin
+                    button.innerHTML = "Aydinlık Tema"; // karanlıktan aydınlıga gecmek icin butonun metni
+                }
+                else{ // eger dark mode aktif degilse
+                    body.style.background = "#ffffff"; // arka plan beyaz
+                    button.innerHTML = "Karanlık Tema"; // aydınlıktan karanlıga gecmek icin butonun metni
+                }
+            }
+        </script>
+    <center>
+        <a href="https://www.instagram.com/" target="_blank"><img src="resimler/indir.jpg" alt="instagramLogo"
+                width="40" height="40"></a>
+        <a href="https://tr.linkedin.com/" target="_blank"><img src="resimler/linkedinLogo.jpg" alt="linkedinLogo"
+                width="40" height="40"></a>
+        <a href="https://x.com/?&" target="_blank"><img src="resimler/xİmages.jpg" alt="xLogo" width="40"
+                height="40"></a>
+        <a href="#top" style="background-color:darkgreen; color: white; padding:8px 15px; border-radius: 5px; text-decoration: none; margin-left: 10px;">🔝 Yukarı Çık</a>        
+    </center>
+        <footer class="site-footer">
+            &copy; 2025 İsa ÇİÇEK | Tüm Hakları Saklıdır
+        </footer>        
+     
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Etiketleri</title>
+</head>
+     <!-- --------form kullanımı ----------
+          <input type="text" >
+          <input type=" password" > sifre girme girerken girilen karakterleri gosterilememe
+          <input type="email" >  email adressi girme 
+          <input type="checbox">  kutucukları secme islemi(hobilerini secme islemi de denir)
+          <input type="radio" >  mesela cinsiyet olarak yazıldıgında tum secenekleri de isaretlemeleri kabul etmemesi icin nameleri aynı yazarsak tum secenekleri tıklamanın önüne gecebiliriz
+          <input type="file" >   dosya secip dosya yukleme islemi
+          <input type="reset" >
+          <input type="subnit" >  gonderme buton islemi file icerisinde yazılan ve diger istenen bilgileri girdikten sonra gondermek islemi
+          <textarea id="w3review" name="w3review" rows="4" cols="50" > seklinde de mesela sikayet kutusu seklinde ornek verilebilir
+          <select><option> 
+          form icerisine yazılan action ssayfada yazılan bilgilerin aktarılma ve depolama isleminin yapıldıgı yerdir
+          checked="true" ==> seklinde yazılan yazı da gonderilen strindeki yazıyı  direk isaretleyecek ve farklı bir butona tıklamaya izin vermeyecek mesela cinsiyetlerde erkek  isaretlerde kadın butonunu isaretlemeye izin vermeyecek ama diger butonlarla bir alakası yok 
+          placeholder = bir kutucugun icerisinde arka planda istenenin yazılmasıdır mesela isminiz seklinde seklinde yazma durumudur     
+     -->
+
+<body>
+     <form  >
+          <input type="text" placeholder="kullanıcı adı"/>
+          <input type="password" placeholder="şifreniz"/>
+          <input type="email" placeholder="email adress"/> <br>
+          kitap okumak <input type="checkbox" id="kitapCheckbox"> <br>
+          spor yapmak <input type="checkbox" id="sporCheckbox"> <br><br>
+          Kadın <input type="radio" name="cinsiyetRadio"> <br>
+          Erkek <input type="radio" name="cinsiyetRadio"> <br>
+          <input type="file"> <br> <br>
+          İcecek Seciniz:
+          <select>
+                  <option value="çay">çay</option>
+                  <option value="kahve">kahve</option>
+                  <option value="limonata">limonata</option>
+          </select> <br> <br>
+
+          <textarea name="mesajİnput" id="mesajAlani" cols="30" rows="10"></textarea>
+          <input type="submit" value="Gönder" >
+          <input type="reset" value="temizle"><br>
+     </form>
+
+</body>
+</html>
